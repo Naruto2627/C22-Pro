@@ -27,11 +27,13 @@ function setup() {
 	groundSprite=createSprite(width/2, height-35, width,10);
 	groundSprite.shapeColor=color(255)
 
+
 	engine = Engine.create();
 	world = engine.world;
 
-	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:1.5>1.2>1>0, isStatic:false});
+	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:1.5, isStatic:true});
 	World.add(world, packageBody);
+	
 
 	//Create a Ground
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
@@ -48,7 +50,6 @@ function draw() {
   background(0);
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
-  keyPressed();
   drawSprites();
  
 }
